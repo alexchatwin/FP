@@ -1,0 +1,42 @@
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableBody {
+	display: table-row-group;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableCell {
+	border: 1px solid #999999;
+	float: left;
+	padding: 0px 0px;
+}
+.divTableBlankCell {
+	border: 0px solid #999999;
+	display: table-cell;
+	padding: 0px 0px;
+}
+
+#wrapper {
+    width: 80%;
+    border: 0px solid black;
+    overflow: hidden; /* will contain if #first is longer than #second */
+    position: absolute;
+
+
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+#left {
+    width: 650px;
+    float:left; /* add this */
+    border: 0px solid red;
+}
+#right {
+    border: 0px solid green;
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}

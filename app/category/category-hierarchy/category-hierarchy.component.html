@@ -1,0 +1,36 @@
+<table>
+  <tr *ngFor="let category of categories">
+    <td><input type="button" (click)="catClicked(category.categoryId)" value="+">{{category.transCat1}}</td>
+    <td>
+      <select [(ngModel)]="category.parentCategoryId"  (ngModelChange)="updateParent(category.categoryId, category.parentCategoryId)">
+        <option value=-1>----</option>
+        <option *ngFor ="let x of categories" 
+        [ngValue]="x.categoryId">
+         <div *ngIf="x.categoryId!=category.categoryId">{{x.transCat1}}</div>
+        </option>
+      </select>
+    </td>
+    <td>
+      <input type="button" (click)="deleteCategory(category.categoryId)" value="x">
+    </td>
+  </tr>
+<br>
+<tr>
+  <td>
+    Add Category
+  </td>
+  <td>
+    <input name="newCat" (change)="addCategory()" #newCat>
+  </td>
+</tr>
+<br>
+</table>
+
+
+
+
+<div class="divTable">
+  <div class="divTableBody">
+   <app-cat-detail #catDetail></app-cat-detail>
+   </div>
+</div>

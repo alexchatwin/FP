@@ -22,7 +22,7 @@ export class TransactionService {
 
 getTransactions():Observable<Transaction[]>
 {
- return this.http.get("http://alexchatwin.com/txn.json")
+ return this.http.get("http://localhost:61694/api/TransactionsApi/")
  .map(res => res.json() as Transaction[])
 }
 }

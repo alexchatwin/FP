@@ -1,0 +1,12 @@
+table {
+    font-size: 7;
+}
+.categorised
+{
+ background-color: green;
+}
+
+.autocategorised
+{
+ background-color: orange;
+}

@@ -1,8 +1,44 @@
-<div class="main-content">
-  <ul>
-    <li *ngFor="let transaction of transactions" class="post">
-      {{transaction.transId}}
-         </li>
-  </ul>
-  <!-- ... -->
+
+  
+  <div class="main-content">
+<table>
+      <tr>
+      <td>Transaction ID</td>
+      <td>Transaction Date</td>
+      <td>Transaction Type</td>
+      <td>Sort Code</td>
+      <td>Account Number</td>
+      <td>Transaction Description</td>
+      <td>Debit Amount</td>
+      <td>Credit Amount</td>
+      <td>Balance</td>
+      <td>Category</td>
+      <td>Effective Date</td>
+      <td>Refund?</td>
+    </tr>
+    <tr *ngFor="let transaction of transactions" 
+    [ngClass]="{'autocategorised': transaction.setBy==1, 'categorised': transaction.setBy==2}"
+    >
+      <td>{{transaction.transId}}</td>
+      <td>{{transaction.transDt | date:'ddMMMyy'}}</td>
+      <td>{{transaction.transTyp}}</td>
+      <td>{{transaction.sortCd}}</td>
+      <td>{{transaction.accountNo}}</td>
+      <td>{{transaction.transDesc}}</td>
+      <td>{{transaction.debitAm}}</td>
+      <td>{{transaction.creditAm}}</td>
+      <td>{{transaction.balanceAm}}</td>
+      <td> 
+       <select [(ngModel)]="transaction.categoryId" (ngModelChange)="updateCategory(transaction.transId, transaction.categoryId)" >      
+        <option *ngFor="let x of categories" 
+        [ngValue]="x.categoryId"  
+        >
+        {{x.transCat1}}
+        </option>
+       </select>
+      </td>
+      <td><input [(ngModel)]='transaction.effectiveDt' type ="date" (change)="updateEffectiveDate(transaction.transId, transaction.effectiveDt)"></td>
+      <td><input type="checkbox" [(ngModel)] = "transaction.isRefund" (change)="updateIsRefund(transaction.transId, transaction.isRefund)"></td>
+    </tr>
+</table>
 </div>

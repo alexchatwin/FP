@@ -1,0 +1,20 @@
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableBody {
+	display: table-row-group;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableCell {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 0px 0px;
+}
+.divTableBlankCell {
+	border: 1px solid #999999;
+	display: table-cell;
+	padding: 0px 0px;
+}

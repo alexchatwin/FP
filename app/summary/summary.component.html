@@ -1,0 +1,16 @@
+ 
+ <div id="wrapper">
+   <div id="left">
+    <app-cat-nest [childJCat]=JCat (changed)="parentChange($event)" #appCatNest></app-cat-nest> 
+   </div>
+   <div id="right">
+      <app-balance-chart #monthnet (clicked)="chartClicked($event)"></app-balance-chart>
+      <app-balance-chart #daily></app-balance-chart>
+   </div>
+      <div class="divTable">
+      <div class="divTableBody">
+      <app-cat-viewer [childJCat]=JCat></app-cat-viewer>
+      </div>
+    </div>
+
+ </div>

@@ -1,0 +1,18 @@
+<template ngFor let-cat [ngForOf]="childJCat">
+    <div class="divTableRow" [style.display]="cat.visible">
+        <div class="divTableCell"  [style.width.px]="150">{{cat.name}}</div>
+        <div class="divTableCell" [style.width.px]="80" >
+            {{cat.net | currency:'GBP':true:'2.0-0'}}
+            </div>
+        <div class="divTableCell" [style.width.px]="40" >
+            {{cat.budgetAm | currency:'GBP':true:'2.0-0'}}
+<br>
+            {{ cat.pct | percent:'2.0-0'}}
+        </div>
+        <div class="divTableCell" [style.width.px]="40" >
+            {{cat.remainingBudget | currency:'GBP':true:'2.0-0'}}
+        </div>
+
+    <app-cat-viewer [childJCat]="cat.children" *ngIf="cat.kids!=0"></app-cat-viewer>
+      </div>  
+</template>

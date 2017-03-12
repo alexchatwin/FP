@@ -1,0 +1,21 @@
+<app-balance-chart #catChart></app-balance-chart>
+<p>
+  <app-budget #catBudget></app-budget>
+</p>
+
+
+  <ul class="uk-nestable uk-nestable-list" data-uk-nestable #catNest>
+    <template ngFor let-cat [ngForOf]="childJCat">
+
+    <li [ngClass]="cat.kids==0 ? 'uk-nestable-item' : 'uk-nestable-item uk-parent'" id={{cat.id}}>
+          <div class="uk-nestable-panel"><div class="uk-nestable-toggle" data-nestable-action="toggle"></div>
+          {{cat.name}}
+        </div>
+
+    <app-cat-nest [childJCat]="cat.children" *ngIf="cat.kids!=0"></app-cat-nest>
+   </li>    
+ 
+  </template>
+
+
+</ul>

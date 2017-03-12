@@ -1,4 +1,20 @@
+
+<script src="public/angular-ui-tree.js"></script>
+
 <h1>
   {{title}}
-  <app-transaction-list></app-transaction-list>
-</h1>
+  </h1>
+  <a [routerLink]="['/trans']">Transactions</a>
+  <a [routerLink]="['/category']">Categories</a>
+  <a [routerLink]="['/chart']">Charts</a>
+  <a [routerLink]="['/budget']">Budget</a>
+  <a [routerLink]="['/summary']">Summary</a>
+<router-outlet></router-outlet>
+<script>
+$(document).ready(function() {
+  $.UIkit.on('stop.uk.nestable', function(){
+    alert('yes');
+  });
+});
+
+</script>
